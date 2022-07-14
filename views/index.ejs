@@ -16,8 +16,8 @@
         <p>Welcome to <%= title %>
         </p>
     </header>
-    <div id="messages-wrapper" class="align-middle text-center">
-        <ul class="flex flex-col justify-center gap-5">
+    <div id="messages-wrapper" class="grid grid-cols-1">
+        <ul class="flex flex-col justify-center gap-5 text-center">
             <% messages.map((msg) => { %>
                 <li class="single-msg-wrapper">
                     <div class="sent-by"><%=msg.user%></div>
@@ -26,6 +26,7 @@
                 </li> 
             <% }) %>
         </ul>
+        <a class="relative p-3 border-2 border-solid rounded justify-self-center mt-5 max-w-fit" href="/new">Add a message</a>
     </div>
 </body>
 

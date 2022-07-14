@@ -22,4 +22,15 @@ const messages = [
 router.get("/", (req, res, next) => {
     res.render("index", { title: "MessageBoard", messages: messages, format: date_fns_1.formatDistanceToNow });
 });
+router.get('/new', (req, res, next) => {
+    res.render('form');
+});
+router.post('/new', (req, res, next) => {
+    messages.push({
+        text: req.body.messageText,
+        user: req.body.username,
+        added: new Date()
+    });
+    res.redirect('/');
+});
 exports.default = router;
