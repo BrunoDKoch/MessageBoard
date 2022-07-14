@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+    <header class="grid grid-cols-1 justify-items-center gap-5">
+        <h1 class="text-6xl font-bold">
+            <%= title %>
+        </h1>
+        <p>Welcome to <%= title %>
+        </p>
+    </header>
+    <div id="messages-wrapper" class="align-middle text-center">
+        <ul class="flex flex-col justify-center gap-5">
+            <% messages.map((msg) => { %>
+                <li class="single-msg-wrapper">
+                    <div class="sent-by"><%=msg.user%></div>
+                    <div class="msg-content"><%=msg.text%></div>
+                    <div class="date-added"><%=format(msg.added)%></div>
+                </li> 
+            <% }) %>
+        </ul>
+    </div>
+</body>
+
 </html>
