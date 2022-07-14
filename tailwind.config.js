@@ -3,7 +3,7 @@ module.exports = {
   content: ['./public/stylesheets/*.{html,js}',
   './views/*.{html,js,ejs}',
 './.{html,js,ts}',
-'./routes{html,js,ts}'],
+'./routes/{html,js,ts}'],
   presets: [],
   darkMode: 'media', // or 'class'
   theme: {
